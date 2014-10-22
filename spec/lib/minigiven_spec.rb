@@ -44,13 +44,13 @@ describe MiniGiven do
       end
     end
 
-    describe "and then call a given and a normal before block" do
+    describe "and then call a given with an implied parameter" do
       before do
         @something = {:foo => true}
       end
       given :something_has_a_bar
 
-      it "has called both the given and the before" do
+      it "used the instance variable as a parameter for the given" do
         @something[:bar].must_equal true
       end
     end

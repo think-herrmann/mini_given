@@ -113,7 +113,7 @@ The methods called with given can take parameters, so something like this
 
     module FooGivens
       def something_with_a_bar(something)
-        something = {bar:true}
+        something[:bar] = true
       end
     end
 

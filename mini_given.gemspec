@@ -8,8 +8,21 @@ Gem::Specification.new do |spec|
   spec.version       = MiniGiven::VERSION
   spec.authors       = ["Andrew Swerlick"]
   spec.email         = ["andrew.swerlick@hbdi.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{
+  A gem that extends minitest with a few new methods to make it easy to share setup code
+  between spec tests.
+  }
+  spec.description   = %q{
+  A gem that extends minitest with a few new methods to make it easy to share setup code
+  between spec tests.
+
+  It allows you to take common setup scenarios and extract them into modules that
+  can be used across multiple tests. It also offers some features to allow for
+  you to chain together multiple scenarios and use the output of one as parameters
+  into the next.
+
+  All of this is wrapped up in a lightweight bdd style syntax.
+  }
   spec.homepage      = ""
   spec.license       = "MIT"
 

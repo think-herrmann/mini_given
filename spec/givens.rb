@@ -10,4 +10,8 @@ module Givens
   def something_has_a_bar(something)
     something[:bar] = true
   end
+
+  def bar_has_a_something(something)
+    @bar = {something:something}
+  end
 end

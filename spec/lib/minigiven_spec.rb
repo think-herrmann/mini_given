@@ -54,5 +54,14 @@ describe MiniGiven do
         @something[:bar].must_equal true
       end
     end
+
+    describe "and then call a given with an explicit parameter" do
+      given :bar_has_a_something, :something => "test"
+
+      it "uses the explicit parameter as the parameter for the given" do
+        @bar[:something].must_equal "test"
+      end
+    end
+
   end
 end

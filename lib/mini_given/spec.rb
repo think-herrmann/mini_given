@@ -10,10 +10,14 @@ module MiniGiven
         extend Minitest::Spec::DSL
         before do
           parameters = method(given_name).parameters.map do |param|
-            symbol = (args && args[param[1]]) || param[1]
-            self.instance_variable_get("@#{symbol.to_s}")
+            if(args && !args[param[1]].is_a?(Symbol))
+              args[param[1]]
+            else
+              symbol = (args && args[param[1]]) || param[1]
+              self.instance_variable_get("@#{symbol.to_s}")
+            end
           end
-          self.send(given_name, *parameters)
+          result = self.send(given_name, *parameters)
         end
       end
 
